@@ -33,11 +33,15 @@ app.use(
 );
 
 app.get("/", (request, response) => {
-    response.json({ info: "Page does not exist. Have a good day!!" });
+    response.json({ info: "Have a good day!!" });
 });
 
 app.listen(port, () => {
-    logger.info("Receipt verification initiated");
+    logger.info("Application running on Port 3000.");
 });
 
 app.use('/receipts', require('./src/Receipts/receiptsRouter.js'));
+
+app.get('*', (req, res) => {
+    res.send('Page not found!');
+  });

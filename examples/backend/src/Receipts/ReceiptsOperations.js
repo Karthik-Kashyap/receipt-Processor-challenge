@@ -96,6 +96,9 @@ const getNewReceiptObject = async (receipt) => {
 const getPointsByReceiptId = async (req, res) => {
     try {
         id = req.params.id;
+        if(!globalReceiptDict.hasOwnProperty(id)){
+            backendUtils.respond(res, 200, { "Message": "Id does not exist."});
+        }
         backendUtils.respond(res, 200, { "points": globalReceiptDict[id].points });
     } catch (err) {
         logger.error(`error: ${err}`);
