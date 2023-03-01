@@ -1,0 +1,13 @@
+{
+  "logging": {
+      "level": {
+          "console": "verbose"
+      },
+      "optional": {
+          "id": true,
+          "ip": true,
+          "timestamp": true
+      },
+      "verboseLimit": 300
+  }
+}

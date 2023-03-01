@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  backend:
+    container_name: receipt_Backend
+    build: 
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
